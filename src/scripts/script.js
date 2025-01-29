@@ -1,0 +1,15 @@
+VANTA.NET({
+  el: "#body",
+  mouseControls: false,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
+  color: "white",
+  backgroundColor: "#09090B",
+  points: 10.0,
+  maxDistance: 10.0,
+  showDots: false,
+});

@@ -1,0 +1,37 @@
+---
+import EmailIcon from "./icons/Email.astro";
+import PhoneIcon from "./icons/Phone.astro";
+import LocationIcon from "./icons/Location.astro";
+
+const CONTACTS = [
+  {
+    source: EmailIcon,
+    title: "EMAIL",
+    content: "marcosloldorado@gmail.com",
+  },
+  {
+    source: PhoneIcon,
+    title: "PHONE",
+    content: "+34 611 754 382",
+  },
+  {
+    source: LocationIcon,
+    title: "LOCATION",
+    content: "Seville, Spain",
+  },
+];
+---
+
+{
+  CONTACTS.map((contact) => (
+    <div class="flex gap-3 items-center">
+      <div>
+        <contact.source />
+      </div>
+      <div>
+        <p class="text-zinc-500 font-bold text-sm">{contact.title}</p>
+        <p class="text-sm">{contact.content}</p>
+      </div>
+    </div>
+  ))
+}

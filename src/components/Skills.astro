@@ -1,0 +1,162 @@
+---
+import Scripts from "../components/Yscroll.astro";
+
+
+import Html from "./icons/Html.astro";
+import Angular from "./icons/Angular.astro";
+import Cassandra from "./icons/Cassandra.astro";
+import Cypress from "./icons/Cypress.astro";
+import Css from "./icons/Css.astro";
+import Git from "./icons/Git.astro";
+import Hbase from "./icons/Hbase.astro";
+import Influxdb from "./icons/Influxdb.astro";
+import Java from "./icons/Java.astro";
+import Javascript from "./icons/Javascript.astro";
+import Laravel from "./icons/Laravel.astro";
+import Mongo from "./icons/Mongo.astro";
+import Neo4j from "./icons/Neo4j.astro";
+import Nodejs from "./icons/Nodejs.astro";
+import Numpy from "./icons/Numpy.astro";
+import Pandas from "./icons/Pandas.astro";
+import React from "./icons/React.astro";
+import Seaborn from "./icons/Seaborn.astro";
+import Sklearn from "./icons/Sklearn.astro";
+import Springboot from "./icons/Springboot.astro";
+import Mysql from "./icons/Mysql.astro";
+import Php from "./icons/Php.astro";
+import Python from "./icons/Python.astro";
+import Selenium from "./icons/Selenium.astro";
+
+const SKILLS = [
+  {
+    name: "HTML",
+    svg: Html,
+    color: "#E44D26",
+  },
+  {
+    name: "Angular",
+    svg: Angular,
+    color: "#DD0031",
+  },
+  {
+    name: "Cassandra",
+    svg: Cassandra,
+    color: "#1287B1",
+  },
+  {
+    name: "Cypress",
+    svg: Cypress,
+    color: "#17202C",
+  },
+  {
+    name: "CSS",
+    svg: Css,
+    color: "#264DE4",
+  },
+  {
+    name: "Git",
+    svg: Git,
+    color: "#F05032",
+  },
+  {
+    name: "HBase",
+    svg: Hbase,
+    color: "#E6522C",
+  },
+  {
+    name: "InfluxDB",
+    svg: Influxdb,
+    color: "#22ADF6",
+  },
+  {
+    name: "Java",
+    svg: Java,
+    color: "#007396",
+  },
+  {
+    name: "Javascript",
+    svg: Javascript,
+    color: "#F7DF1E",
+  },
+  {
+    name: "Laravel",
+    svg: Laravel,
+    color: "#FF2D20",
+  },
+  {
+    name: "MongoDB",
+    svg: Mongo,
+    color: "#47A248",
+  },
+  {
+    name: "Neo4j",
+    svg: Neo4j,
+    color: "#008CC1",
+  },
+  {
+    name: "Node.js",
+    svg: Nodejs,
+    color: "#339933",
+  },
+  {
+    name: "Numpy",
+    svg: Numpy,
+    color: "#013243",
+  },
+  {
+    name: "Pandas",
+    svg: Pandas,
+    color: "#150458",
+  },
+  {
+    name: "React",
+    svg: React,
+    color: "#61DAFB",
+  },
+  {
+    name: "Seaborn",
+    svg: Seaborn,
+    color: "#4EABE1",
+  },
+  {
+    name: "Sklearn",
+    svg: Sklearn,
+    color: "#F7931E",
+  },
+  {
+    name: "SpringBoot",
+    svg: Springboot,
+    color: "#6DB33F",
+  },
+  {
+    name: "MySQL",
+    svg: Mysql,
+    color: "#4479A1",
+  },
+  {
+    name: "PHP",
+    svg: Php,
+    color: "#777BB4",
+  },
+  {
+    name: "Python",
+    svg: Python,
+    color: "#3776AB",
+  },
+  {
+    name: "Selenium",
+    svg: Selenium,
+    color: "#43B02A",
+  },
+];
+---
+
+{
+  SKILLS.map((skill) => (
+    <div class="h-2/5 w-1/5">
+      <skill.svg />
+    </div>
+  ))
+}
+
+<Scripts />

@@ -1,0 +1,23 @@
+---
+import LinkedinIcon from "./icons/Linkedin.astro";
+import GithubIcon from "./icons/Github.astro";
+import DiscordIcon from "./icons/Discord.astro";
+
+const SOCIALS = [
+  {
+    source: LinkedinIcon,
+  },
+  {
+    source: GithubIcon,
+  },
+  {
+    source: DiscordIcon,
+  },
+];
+---
+
+{
+  SOCIALS.map((social) => (
+    <a href=""><social.source/></a>
+))
+}
