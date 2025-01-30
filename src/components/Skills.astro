@@ -153,10 +153,20 @@ const SKILLS = [
 
 {
   SKILLS.map((skill) => (
-    <div class="h-2/5 w-1/5">
+    <div
+      class="h-2/5 w-1/5 transition duration-300 ease-in-out flex flex-col items-center justify-center font-bold skill relative"
+      style={{
+        color: skill.color
+      }}
+    >
+      <p class="opacity-0 transition duration-300 ease-in-out">{skill.name}</p>
       <skill.svg />
     </div>
   ))
 }
+
+
+</style>
+
 
 <Scripts />
