@@ -1,7 +1,6 @@
 ---
 import Scripts from "../components/Yscroll.astro";
 
-
 import Html from "./icons/Html.astro";
 import Angular from "./icons/Angular.astro";
 import Cassandra from "./icons/Cassandra.astro";
@@ -26,6 +25,10 @@ import Mysql from "./icons/Mysql.astro";
 import Php from "./icons/Php.astro";
 import Python from "./icons/Python.astro";
 import Selenium from "./icons/Selenium.astro";
+import Figma from "./icons/Figma.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Sass from "./icons/Sass.astro";
+import Docker from "./icons/Docker.astro";
 
 const SKILLS = [
   {
@@ -34,44 +37,9 @@ const SKILLS = [
     color: "#E44D26",
   },
   {
-    name: "Angular",
-    svg: Angular,
-    color: "#DD0031",
-  },
-  {
-    name: "Cassandra",
-    svg: Cassandra,
-    color: "#1287B1",
-  },
-  {
-    name: "Cypress",
-    svg: Cypress,
-    color: "#17202C",
-  },
-  {
     name: "CSS",
     svg: Css,
     color: "#264DE4",
-  },
-  {
-    name: "Git",
-    svg: Git,
-    color: "#F05032",
-  },
-  {
-    name: "HBase",
-    svg: Hbase,
-    color: "#E6522C",
-  },
-  {
-    name: "InfluxDB",
-    svg: Influxdb,
-    color: "#22ADF6",
-  },
-  {
-    name: "Java",
-    svg: Java,
-    color: "#007396",
   },
   {
     name: "Javascript",
@@ -79,19 +47,14 @@ const SKILLS = [
     color: "#F7DF1E",
   },
   {
-    name: "Laravel",
-    svg: Laravel,
-    color: "#FF2D20",
+    name: "PHP",
+    svg: Php,
+    color: "#777BB4",
   },
   {
-    name: "MongoDB",
-    svg: Mongo,
-    color: "#47A248",
-  },
-  {
-    name: "Neo4j",
-    svg: Neo4j,
-    color: "#008CC1",
+    name: "Python",
+    svg: Python,
+    color: "#FFD849",
   },
   {
     name: "Node.js",
@@ -99,19 +62,94 @@ const SKILLS = [
     color: "#339933",
   },
   {
-    name: "Numpy",
-    svg: Numpy,
-    color: "#013243",
+    name: "Laravel",
+    svg: Laravel,
+    color: "#FF2D20",
   },
   {
-    name: "Pandas",
-    svg: Pandas,
-    color: "#150458",
+    name: "SpringBoot",
+    svg: Springboot,
+    color: "#6DB33F",
+  },
+  {
+    name: "Angular",
+    svg: Angular,
+    color: "#DD0031",
   },
   {
     name: "React",
     svg: React,
     color: "#61DAFB",
+  },
+  {
+    name: "Java",
+    svg: Java,
+    color: "#148DCB",
+  },
+  {
+    name: "Figma",
+    svg: Figma,
+    color: "#A55EFF",
+  },
+  {
+    name: "Git",
+    svg: Git,
+    color: "#F05032",
+  },
+  {
+    name: "Docker",
+    svg: Docker,
+    color: "#2496ED",
+  },
+  {
+    name: "Tailwind",
+    svg: Tailwind,
+    color: "#38B2AC",
+  },
+  {
+    name: "Sass",
+    svg: Sass,
+    color: "#CC6699",
+  },
+  {
+    name: "Cassandra",
+    svg: Cassandra,
+    color: "#1287B1",
+  },
+  {
+    name: "HBase",
+    svg: Hbase,
+    color: "red",
+  },
+  {
+    name: "InfluxDB",
+    svg: Influxdb,
+    color: "#22ADF6",
+  },
+  {
+    name: "MongoDB",
+    svg: Mongo,
+    color: "#47A248",
+  },
+  {
+    name: "MySQL",
+    svg: Mysql,
+    color: "#4479A1",
+  },
+  {
+    name: "Neo4j",
+    svg: Neo4j,
+    color: "#008CC1",
+  },
+  {
+    name: "Numpy",
+    svg: Numpy,
+    color: "#53AED1",
+  },
+  {
+    name: "Pandas",
+    svg: Pandas,
+    color: "#E80C8C",
   },
   {
     name: "Seaborn",
@@ -124,29 +162,14 @@ const SKILLS = [
     color: "#F7931E",
   },
   {
-    name: "SpringBoot",
-    svg: Springboot,
-    color: "#6DB33F",
-  },
-  {
-    name: "MySQL",
-    svg: Mysql,
-    color: "#4479A1",
-  },
-  {
-    name: "PHP",
-    svg: Php,
-    color: "#777BB4",
-  },
-  {
-    name: "Python",
-    svg: Python,
-    color: "#3776AB",
-  },
-  {
     name: "Selenium",
     svg: Selenium,
     color: "#43B02A",
+  },
+  {
+    name: "Cypress",
+    svg: Cypress,
+    color: "#49BF96",
   },
 ];
 ---
@@ -154,19 +177,30 @@ const SKILLS = [
 {
   SKILLS.map((skill) => (
     <div
-      class="h-2/5 w-1/5 transition duration-300 ease-in-out flex flex-col items-center justify-center font-bold skill relative"
-      style={{
-        color: skill.color
-      }}
+      class="h-2/5 w-1/5 flex flex-col items-center justify-center font-bold skill relative skill p-3"
+      style="color: white; transition: 0.3s ease-in-out;"
+      color={skill.color}
     >
-      <p class="opacity-0 transition duration-300 ease-in-out">{skill.name}</p>
-      <skill.svg />
+      <p class="opacity-0 absolute top-0">
+        {skill.name}
+      </p>
+      <skill.svg class="bg-white" />
     </div>
   ))
 }
 
-
-</style>
-
-
 <Scripts />
+
+<style>
+  .skill svg {
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+  }
+  
+  .skill p {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* padding: 5px; */
+    /* border-radius: 10px; */
+    /* text-shadow: 1 1 1px rgba(0, 0, 0, 1); */
+  }
+</style>
