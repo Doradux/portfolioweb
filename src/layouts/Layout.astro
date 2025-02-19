@@ -34,6 +34,7 @@ import Scripts from "../components/LocalScripts.astro";
     color: white;
     height: 100vh;
     width: 100%;
+    overflow: hidden;
   }
 
   body {
@@ -47,16 +48,25 @@ import Scripts from "../components/LocalScripts.astro";
 
   .custom-scrollbar::-webkit-scrollbar {
     height: 5px;
+    width: 5px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #262626;
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5e5e5e;
     border-radius: 0 0 10px 10px;
   }
-  
-  ::-webkit-scrollbar-thumb {
+
+  .custom-scrollbar-2::-webkit-scrollbar-thumb {
     background: #5e5e5e;
+    border: 3px solid #0B0B0C;
+    border-top: 10px solid #0B0B0C;
+    border-bottom: 10px solid #0B0B0C;
   }
+  
+  .custom-scrollbar-2::-webkit-scrollbar {
+    width: 10px;
+  }
+  
 </style>
 
 <Scripts />

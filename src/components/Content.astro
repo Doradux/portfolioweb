@@ -1,52 +1,18 @@
 ---
 import Header from "./Header.astro";
-import Skills from "./Skills.astro";
+import About from "./About.astro";
+import Resume from "./Resume.astro";
 ---
 
-<div
-  class="flex flex-col h-full w-full justify-between gap-5"
->
+<div class="flex flex-col h-full w-full justify-between gap-5 relative">
   <div
-    class="bg-zinc-900 rounded-xl h-[10%] w-full flex font-bold text-xl items-center"
+    class="bg-neutral-950 rounded-xl min-h-[10%] w-full flex font-bold text-xl items-center outline-2 outline-double outline-neutral-800 bg-opacity-90 overflow-hidden"
   >
     <Header />
   </div>
-  <div class="bg-zinc-900 rounded-xl h-[90%] p-8 w-full flex flex-col gap-10">
-    <div class="flex flex-col gap-5">
-      <p>
-        Hi! I'm Marcos Dorado, a passionate software developer with a strong
-        background in web technologies and Big Data. I'm currently completing a
-        specialization course in AI and Big Data, strengthening my knowledge in
-        data analysis, machine learning, and scalable technologies.
-      </p>
 
-      <p>
-        I have experience in web development with HTML, CSS, JavaScript, React,
-        Angular, PHP, Java, SpringBoot, Node.js, and Laravel, as well as SQL and
-        NoSQL databases (MongoDB, InfluxDB, Neo4j, HBase, Cassandra).
-        Additionally, I have worked with testing tools like Cypress and Selenium
-        and data analysis frameworks such as Pandas, NumPy, Seaborn, and
-        Sklearn.
-      </p>
-
-      <p>
-        I'm motivated by continuous learning and solving complex problems
-        through technology.
-      </p>
-
-      <p>
-        I'm looking for opportunities to grow in the fields of development and
-        artificial intelligence, contribute to innovative projects, and keep
-        expanding my skills. If you'd like to know more about me or collaborate
-        on a project, let’s connect!
-      </p>
-    </div>
-
-    <div class="flex flex-col gap-5 max-h-full overflow-hidden">
-      <h1 class="font-bold text-2xl">Skills</h1>
-      <div class="bg-zinc-800 rounded-xl w-full max-h-full flex flex-col flex-wrap gap-5 overflow-x-scroll overflow-y-hidden justify-center custom-scrollbar">
-        <Skills />
-      </div>
-    </div>
+  <div id="content" class="flex h-[85%] gap-80 absolute bottom-0 left-0 w-full transition-all ease-in-out duration-300">
+    <About />
+    <Resume />
   </div>
 </div>

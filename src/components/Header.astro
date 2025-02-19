@@ -5,14 +5,14 @@ const HEADER = ["About", "Resume", "Portfolio", "Contact"];
 {
   HEADER.map((section) =>
     section === "About" ? (
-      <div class="hover:cursor-pointer w-full h-full justify-center flex items-center hover:text-zinc-500">
-        <p class="text-cyan-600">
+      <div id={section} class="hover:cursor-pointer w-full h-full justify-center flex items-center text-zinc-500">
+        <p>
           {section}
         </p>
       </div>
     ) : (
-      <div class="hover:cursor-pointer w-full h-full justify-center flex items-center hover:text-zinc-500">
-        <p class="transition duration-300 ease-in-out">
+      <div id={section} class="hover:cursor-pointer w-full h-full justify-center flex items-center hover:text-zinc-500 transition duration-300 ease-in-out">
+        <p>
           {section}
         </p>
       </div>

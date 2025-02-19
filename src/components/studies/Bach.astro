@@ -1,0 +1,33 @@
+---
+import Date from ".././icons/Date.astro";
+import Centre from ".././icons/Centre.astro";
+---
+
+<li>
+  <a
+    href="https://www.iesalmudeyne.es/"
+    class="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-neutral-800"
+  >
+    <img
+      class="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0"
+      src="iesalmudeyne.png"
+      alt="IES Poligono Sur"
+    />
+    <div class="text-gray-600 dark:text-gray-400">
+      <div class="text-base font-medium text-white">
+        Spanish Baccalaureate in Social Sciences (equivalent to A-Levels / High School Diploma)
+      </div>
+      <div class="flex gap-3">
+        <span class="text-sm font-normal flex gap-1"
+          ><Centre />IES Almudeyne</span
+        >
+        <span
+          class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400 gap-1"
+        >
+          <Date />
+          2020 - 2022
+        </span>
+      </div>
+    </div>
+  </a>
+</li>

@@ -2,22 +2,35 @@
 import LinkedinIcon from "./icons/Linkedin.astro";
 import GithubIcon from "./icons/Github.astro";
 import DiscordIcon from "./icons/Discord.astro";
+import SkypeIcon from "./icons/Skype.astro";
 
 const SOCIALS = [
   {
     source: LinkedinIcon,
+    href: "https://www.linkedin.com/in/marcosdorado/",
+    msg: "Linkedin"
+    
   },
   {
     source: GithubIcon,
+    href: "https://github.com/Doradux",
+    msg: "GitHub"
   },
   {
     source: DiscordIcon,
+    href: 'https://discordapp.com/users/371768880244195328',
+    msg: "Discord"
   },
+  {
+    source: SkypeIcon,
+    href: 'https://join.skype.com/invite/DUMu0ZZ36yqw',
+    msg: "Skype"
+  }
 ];
 ---
 
 {
   SOCIALS.map((social) => (
-    <a href=""><social.source/></a>
+    <a href={social.href} aria-label={social.msg}><social.source/></a>
 ))
 }
