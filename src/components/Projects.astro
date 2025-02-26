@@ -1,0 +1,132 @@
+---
+import Cex from "../../public/portfolio/cex.png";
+import Filmcy from "../../public/portfolio/filmcy.png";
+import Kebap from "../../public/portfolio/kebap.png";
+import Hackathon from "../../public/portfolio/hackathon.png";
+import Minebot from "../../public/portfolio/minebot.png";
+import Github from "./icons/Github.astro";
+import Figma from "./icons/Figma.astro";
+import Web from "./icons/Web.astro";
+
+import { Image } from "astro:assets";
+
+const PROJECTS = [
+  {
+    name: "KEBAP ESTAMBUL",
+    img: Kebap,
+    urls: {
+      figma: [
+        "https://www.figma.com/design/LgqThjFMlOnvC8vwPL8v6b/Kebap-Estambul?node-id=0-1&t=1Xowe5RMyIh4bDxP-1",
+        Figma,
+      ],
+    },
+  },
+  {
+    name: "DISCORD SERVER STATUS BOT",
+    img: Minebot,
+    urls: {
+      github: ["https://github.com/Doradux/minecraft-server-status-discord-bot", Github],
+    },
+  },
+  {
+    name: "CEX: VIDEO&CHAT",
+    img: Cex,
+    urls: {
+      github: ["https://github.com/Doradux/Cex", Github],
+    },
+  },
+  {
+    name: "FILMCY",
+    img: Filmcy,
+    urls: {
+      github: ["https://github.com/Doradux/FilmCy", Github],
+      figma: [
+        "https://www.figma.com/file/BVXxOfHLecOrnTPHFydM7a/FilmCy?type=design&node-id=0%3A1&mode=design&t=4xRGu3pIJCpXzyrf-1",
+        Figma,
+      ],
+      web: ["https://aquamarine-basbousa-5bb42a.netlify.app/src/index.html", Web],
+    },
+  },
+  {
+    name: "HACKATHON",
+    img: Hackathon,
+    urls: {
+      web: ["https://exquisite-snickerdoodle-1b431b.netlify.app/", Web],
+    },
+  },
+];
+---
+
+{
+  PROJECTS.map((Project) => {
+    return (
+      <div class="min-h-80 rounded-md overflow-hidden imgs-cont bg-neutral-900 flex p-[10px] pb-0 relative">
+        <p class="mt-5 font-bold text-2xl absolute top-0 w-full text-center left-0">
+          {Project.name}
+        </p>
+
+        {/* Verificar si existen URLs y renderizarlas dinámicamente */}
+        {Project.urls && Object.keys(Project.urls).length > 0 && (
+          <div class="flex flex-col justify-around relative overflow-hidden">
+            {Object.entries(Project.urls).map(([key, value]) => {
+              console.log("URL:", value[0], "Key:", key); // Aquí corregí el destructuring
+
+              // Si el valor es un componente, lo renderizamos directamente
+              const IconComponent = value[1];
+
+              return (
+                <a
+                  href={value[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 enlacesvg inline-block justify-center items-center hover:scale-110 transition-all ease-in-out"
+                >
+                  {IconComponent && <IconComponent />}
+                </a>
+              );
+            })}
+          </div>
+        )}
+
+        <Image
+          src={Project.img}
+          alt={Project.name}
+          class="object-cover w-full h-full in-img transition-all ease-in-out duration-200 rounded-md absolute top-0 left-0 object-top"
+        />
+      </div>
+    );
+  })
+}
+
+<script>
+  let imgs = document.querySelectorAll(".in-img");
+  let imgs_cont = document.querySelectorAll(".imgs-cont");
+
+  imgs_cont.forEach((element) => {
+    element.addEventListener("mouseover", () => {
+      let img = element.querySelector(".in-img");
+      img.style.transform = "translateX(70px) translateY(70px)";
+      // console.log(img)
+    });
+
+    element.addEventListener("mouseout", () => {
+      let img = element.querySelector(".in-img");
+      img.style.transform = "translateX(0)";
+    });
+  });
+
+  let ensvg = document.querySelectorAll(".enlacesvg");
+  ensvg.forEach((element) => {
+    console.log(element); // Para ver qué elementos están siendo seleccionados
+    let svgs = element.querySelectorAll("svg");
+    if (svgs.length > 0) {
+      svgs.forEach((element2) => {
+        element2.style.width = "100%";
+        element2.style.height = "100%";
+      });
+    } else {
+      console.log("No se encontraron elementos <svg> en", element);
+    }
+  });
+
+</script>
