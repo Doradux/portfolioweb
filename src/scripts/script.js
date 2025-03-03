@@ -15,7 +15,7 @@ VANTA.NET({
 });
 
 // change contents opacity and change header color and hover class
-function vanish(clicked, contents, elements) {
+function vanish(clicked, contents, elements, content) {
   Object.values(elements).forEach((element) => {
     element.classList.remove("text-zinc-500");
     element.classList.add("hover:text-zinc-500");
@@ -31,6 +31,12 @@ function vanish(clicked, contents, elements) {
   });
 }
 
+function moveContent(clicked, content) {
+  console.log(clicked);
+  let distance = document.getElementById("about-content").offsetWidth + 40;
+  content.style.left = `-${distance * clicked}px`;
+}
+
 let currentSectionIndex = 0;
 
 let content = document.getElementById("content");
@@ -43,30 +49,28 @@ let contact = document.getElementById("Contact");
 let resumeContent = document.getElementById("resume-content");
 let aboutContent = document.getElementById("about-content");
 let portfolioContent = document.getElementById("portfolio-content");
-let contactContent = document.getElementById("contact-content");
 
 let elements = {
   0: about,
   1: resume,
   2: portfolio,
-  3: contact,
 };
 
-let contents = [aboutContent, resumeContent, portfolioContent, contactContent];
+let contents = [aboutContent, resumeContent, portfolioContent];
+
+
 
 // move content when headed element is clicked
 Object.keys(elements).forEach((element) => {
   elements[element].addEventListener("click", function (event) {
-    let distance =
-      document.getElementById("about-content").offsetWidth + 4 * 80;
-    content.style.left = `-${distance * element}px`;
     currentSectionIndex = element;
-    vanish(element, contents, elements);
+    vanish(element, contents, elements, content);
+    moveContent(element, content);
   });
 });
 
 // repositionate content when window size is changed
 window.addEventListener("resize", function () {
-  let distance = document.getElementById("about-content").offsetWidth + 4 * 80;
+  let distance = document.getElementById("about-content").offsetWidth + 40;
   content.style.left = `-${distance * currentSectionIndex}px`;
 });

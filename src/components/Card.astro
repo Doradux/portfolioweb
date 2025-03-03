@@ -1,14 +1,14 @@
 ---
 import Contacts from "./Contacts.astro";
 import Socials from "./Socials.astro";
-import { Image } from 'astro:assets';
-import memoji from '../../public/memoji.png';
+import { Image } from "astro:assets";
+import memoji from "../../public/memoji.png";
 ---
 
 <div
-  class="flex flex-col justify-around bg-neutral-950 rounded-xl p-8 h-100 max-w-[20%] w-full outline-2 outline-double outline-neutral-800 bg-opacity-90 z-10"
+  class="flex flex-col md:flex-row lg:flex-col justify-around bg-neutral-950 lg:rounded-xl p-8 h-100 lg:max-w-[20%] w-full outline-2 outline-double outline-neutral-800 bg-opacity-90 z-10 gap-5"
 >
-  <div class="flex flex-col items-center gap-3">
+  <div class="flex md:flex-col items-center gap-3 lg:h-[40%]">
     <div class="flex bg-neutral-800 min-w-36 max-w-36 rounded-[25%] relative">
       <Image src={memoji} alt="memoji" loading="eager" />
       <div
@@ -16,19 +16,23 @@ import memoji from '../../public/memoji.png';
       >
       </div>
     </div>
-    <h2 class="font-bold text-xl text-center">MARCOS DORADO</h2>
-    <p class="px-2 py-1 bg-neutral-800 rounded-sm font-mono text-sm text-center">
-      Software Developer
-    </p>
+    <div class="flex flex-col justify-center gap-3 h-full">
+      <h2 class="font-bold text-xl text-center">MARCOS DORADO</h2>
+      <p
+        class="px-2 py-1 bg-neutral-800 rounded-sm font-mono text-sm text-center"
+      >
+        Software Developer
+      </p>
+    </div>
   </div>
 
-  <div class="w-full h-[1px] bg-neutral-700"></div>
+  <div class="w-[1px] h-full lg:w-full lg:h-[1px] bg-neutral-700"></div>
 
-  <div class="flex flex-col gap-5">
+  <div class="hidden md:flex flex-col gap-6 justify-center">
     <Contacts />
   </div>
 
-  <div class="flex justify-around">
+  <div class="flex flex-row md:flex-col lg:flex-row justify-around">
     <Socials />
   </div>
 </div>
