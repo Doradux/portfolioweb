@@ -2,9 +2,9 @@
 import Skills from "./Skills.astro";
 ---
 
-<div id="about-content" class="custom-scrollbar-2 bg-neutral-950 lg:rounded-xl h-full p-8 min-w-full flex flex-col gap-5 outline-2 outline-double outline-neutral-800 bg-opacity-90 transition-all ease-in-out duration-300 overflow-y-scroll">
-  <p class="font-bold text-2xl">About</p>
-    <div class="flex flex-col gap-3">
+<div id="about-content" class="custom-scrollbar-2 bg-neutral-950 lg:rounded-xl h-full md:p-8 min-w-full flex flex-col gap-5 outline-2 outline-double outline-neutral-800 bg-opacity-90 transition-all ease-in-out duration-300 overflow-y-scroll">
+  <p class="font-bold text-2xl p-3 md:p-0">About</p>
+    <div class="flex flex-col gap-3 p-3 md:p-0">
       <p>
         Hi! I'm Marcos Dorado, a software developer with a strong
         background in web technologies and Big Data. I'm currently completing a
@@ -35,8 +35,8 @@ import Skills from "./Skills.astro";
     </div>
 
     <div class="flex flex-col gap-5 max-h-96 md:max-h-72">
-      <h1 class="font-bold text-2xl">Skills</h1>
-      <div class="bg-neutral-900 rounded-xl w-full max-h-full flex flex-col flex-wrap gap-5 overflow-x-scroll overflow-hidden justify-center custom-scrollbar">
+      <h1 class="font-bold text-2xl p-3 md:p-0">Skills</h1>
+      <div class="bg-neutral-900 md:rounded-xl w-full max-h-full flex flex-col flex-wrap gap-5 overflow-x-scroll overflow-hidden justify-center custom-scrollbar">
         <Skills />
       </div>
     </div>

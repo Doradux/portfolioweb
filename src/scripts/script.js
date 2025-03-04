@@ -32,7 +32,6 @@ function vanish(clicked, contents, elements, content) {
 }
 
 function moveContent(clicked, content) {
-  console.log(clicked);
   let distance = document.getElementById("about-content").offsetWidth + 40;
   content.style.left = `-${distance * clicked}px`;
 }
@@ -58,8 +57,6 @@ let elements = {
 
 let contents = [aboutContent, resumeContent, portfolioContent];
 
-
-
 // move content when headed element is clicked
 Object.keys(elements).forEach((element) => {
   elements[element].addEventListener("click", function (event) {
@@ -73,4 +70,55 @@ Object.keys(elements).forEach((element) => {
 window.addEventListener("resize", function () {
   let distance = document.getElementById("about-content").offsetWidth + 40;
   content.style.left = `-${distance * currentSectionIndex}px`;
+});
+
+let menuOpened = false;
+let openMenu = document.getElementById("openmenu");
+let shield = document.getElementById("shield");
+let menu = document.getElementById("menu");
+
+function checkMenu(menuOpened) {
+  if (window.innerWidth < 1024) {
+    if (menuOpened) {
+      menu.classList.remove("hidden");
+      menu.style.transform = "translateX(0vw)";
+      shield.classList.remove("hidden");
+      shield.classList.add("absolute");
+      shield.style.transform = "translateX(0vw)";
+      openMenu.style.transform = "translateX(-100vw)";
+    } else {
+      menu.classList.add("hidden");
+      menu.style.transform = "translateX(-100vw)";
+      shield.classList.add("hidden");
+      shield.classList.remove("absolute");
+      shield.style.transform = "translateX(-100vw)";
+      openMenu.style.transform = "translateX(0vw)";
+    }
+  }
+}
+
+checkMenu(menuOpened);
+openMenu.addEventListener("click", function () {
+  menuOpened = true;
+  checkMenu(menuOpened);
+});
+
+shield.addEventListener("click", function () {
+  menuOpened = false;
+  checkMenu(menuOpened);
+});
+
+Object.keys(elements).forEach((element) => {
+  elements[element].addEventListener("click", function (event) {
+    menuOpened = false;
+    checkMenu(menuOpened);
+  });
+});
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth < 1024) {
+    menu.classList.add("hidden");
+  } else {
+    menu.style.transform = "translateX(0vw)";
+  }
 });
