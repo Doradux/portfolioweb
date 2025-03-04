@@ -3,15 +3,14 @@ import Scripts from "../components/LocalScripts.astro";
 ---
 
 <!doctype html>
-<html lang="en" class="lg:overflow-hidden">
+<html id="html" lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <body id="body" class="bg-zinc-950 lg:py-[6rem] lg:px-[10rem]">
+  <body id="body" class="bg-zinc-950 lg:py-[6rem] lg:px-[10rem] h-full overflow-x-hidden">
     <slot />
   </body>
 </html>
@@ -34,18 +33,12 @@ import Scripts from "../components/LocalScripts.astro";
     color: white;
     height: 100%;
     max-width: 100vw;
-    min-height: 100vh;
-    width: 100%;
-    height: 100%;
-    /* overflow: hidden; */
-    background-color: white;
+    background-color: black;
   }
 
   body {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    width: 100%;
   }
 
   .custom-scrollbar::-webkit-scrollbar {

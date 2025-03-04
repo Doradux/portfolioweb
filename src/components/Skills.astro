@@ -96,11 +96,11 @@ const SKILLS = [
     svg: Angular,
     color: "#DD0031",
   },
-  {
-    name: "React",
-    svg: React,
-    color: "#61DAFB",
-  },
+  // {
+    // name: "React",
+    // svg: React,
+    // color: "#61DAFB",
+  // },
   {
     name: "Java",
     svg: Java,
@@ -177,7 +177,7 @@ const SKILLS = [
 {
   SKILLS.map((skill) => (
     <div
-      class="h-2/5 w-1/5 flex flex-col items-center justify-center font-bold skill relative skill p-3"
+      class="h-2/5 w-1/5 max-w-20 flex flex-col items-center justify-center font-bold skill relative skill p-3"
       style="color: white; transition: 0.3s ease-in-out;"
       color={skill.color}
     >
