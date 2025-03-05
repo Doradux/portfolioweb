@@ -1,6 +1,8 @@
 ---
 import Date from ".././icons/Date.astro";
 import Centre from ".././icons/Centre.astro";
+import BachImage from "../../assets/images/iesalmudeyne.png";
+import { Image } from "astro:assets";
 ---
 
 <li>
@@ -8,9 +10,9 @@ import Centre from ".././icons/Centre.astro";
     href="https://www.iesalmudeyne.es/"
     class="items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-neutral-800"
   >
-    <img
+    <Image
       class="w-12 h-12 mb-3 me-3 rounded-full sm:mb-0"
-      src="iesalmudeyne.png"
+      src={BachImage}
       alt="IES Poligono Sur"
     />
     <div class="text-gray-600 dark:text-gray-400">
