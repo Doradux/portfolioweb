@@ -1,4 +1,5 @@
 ---
+import GuitarLa from "../assets/images/portfolio/guitarla.png";
 import Cex from "../assets/images/portfolio/cex.png";
 import Filmcy from "../assets/images/portfolio/filmcy.png";
 import Kebap from "../assets/images/portfolio/kebap.png";
@@ -14,6 +15,14 @@ import Web from "./icons/Web.astro";
 import { Image } from "astro:assets";
 
 const PROJECTS = [
+  {
+    name: "GuitarLa - React",
+    img: GuitarLa,
+    urls: {
+      web: ["https://zesty-tiramisu-364336.netlify.app/", Web],
+      github: ["https://github.com/Doradux/GuitarLa-react-carrito", Github],
+    },
+  },
   {
     name: "KEBAP ESTAMBUL",
     img: Kebap,
@@ -74,14 +83,14 @@ const PROJECTS = [
     name: "KIOSKO MINI SPRINGBOOT APP",
     img: Kiosko,
     urls: {
-      github: ["https://github.com/Doradux/spring-kiosko", Github]
+      github: ["https://github.com/Doradux/spring-kiosko", Github],
     },
   },
   {
     name: "LARAVEL CRUD",
     img: Crud,
     urls: {
-      github: ["https://github.com/Doradux/CrudLaravelDAW", Github]
+      github: ["https://github.com/Doradux/CrudLaravelDAW", Github],
     },
   },
 ];
@@ -98,7 +107,6 @@ const PROJECTS = [
         {Project.urls && Object.keys(Project.urls).length > 0 && (
           <div class="flex flex-col justify-around overflow-hidden h-[80%] absolute bottom-0 left-3">
             {Object.entries(Project.urls).map(([key, value]) => {
-
               const IconComponent = value[1];
 
               return (
