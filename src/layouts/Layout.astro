@@ -7,10 +7,13 @@ import Scripts from "../components/LocalScripts.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/memoji.ico" />
     <title>Marcos Dorado</title>
   </head>
-  <body id="body" class="bg-zinc-950 lg:py-[6rem] lg:px-[10rem] h-full overflow-x-hidden">
+  <body
+    id="body"
+    class="bg-zinc-950 lg:py-[6rem] lg:px-[10rem] h-full overflow-x-hidden"
+  >
     <slot />
   </body>
 </html>
@@ -54,15 +57,14 @@ import Scripts from "../components/LocalScripts.astro";
 
   .custom-scrollbar-2::-webkit-scrollbar-thumb {
     background: #5e5e5e;
-    border: 3px solid #0B0B0C;
-    border-top: 10px solid #0B0B0C;
-    border-bottom: 10px solid #0B0B0C;
+    border: 3px solid #0b0b0c;
+    border-top: 10px solid #0b0b0c;
+    border-bottom: 10px solid #0b0b0c;
   }
-  
+
   .custom-scrollbar-2::-webkit-scrollbar {
     width: 10px;
   }
-  
 </style>
 
 <Scripts />
